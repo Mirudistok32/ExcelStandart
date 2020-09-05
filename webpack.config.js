@@ -6,7 +6,7 @@ module.exports = {
   context: path.resolve(__dirname, "src"),
   mode: "development",
   // Указываем входные точки для приложения
-  entry: "index.js",
+  entry: "./index.js",
   //
   output: {
     //   Файл, в котором будут находиться все наши javascript-ы

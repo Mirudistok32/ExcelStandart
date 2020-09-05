@@ -12,6 +12,10 @@
     "babel",
     "excel"
   ],
+  "scripts": {
+    "start": "webpack",
+    "build": "webpack --mode production"
+  },
   "devDependencies": {
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
