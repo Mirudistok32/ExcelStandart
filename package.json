@@ -1,0 +1,23 @@
+{
+  "name": "excel-standart",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Mirudistok32/ExcelStandart.git",
+  "author": "Mirudistok32 <mirudistok32@yandex.ru>",
+  "license": "MIT",
+  "keywords": [
+    "js",
+    "javascript",
+    "webpack",
+    "babel",
+    "excel"
+  ],
+  "scripts": {
+    "start": "webpack",
+    "build": "webpack --mode production"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
