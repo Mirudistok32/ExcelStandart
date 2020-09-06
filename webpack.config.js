@@ -35,16 +35,32 @@ module.exports = {
       template: "index.html",
     }),
     // Используем для того, чтобы переносить фавикон
-    new CopyPlugin([
-      {
-        from: path.resolve(__dirname, "src/favicon.ico"),
-        to: path.resolve(__dirname, "dist"),
-      },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, "src/favicon.ico"),
+          to: path.resolve(__dirname, "dist"),
+        },
+      ],
+    }),
     // Нужен для того, чтобы выносить весь css из js в отдельный файл
     new MiniCssExtractPlugin({
       // В какой файл все это нужно будет поместить
       filename: "bundle.[hash].css",
     }),
   ],
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          // css-loader
+          { loader: "css-loader" },
+          // sass-loader
+          { loader: "sass-loader" },
+        ],
+      },
+    ],
+  },
 };
