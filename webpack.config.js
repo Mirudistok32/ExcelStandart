@@ -9,9 +9,13 @@ module.exports = {
   entry: "./index.js",
   //
   output: {
-    //   Файл, в котором будут находиться все наши javascript-ы
-    filename: "bundle.js",
+    //   Файл, в котором будут находиться все наши javascript-ы, и добавили хеш
+    filename: "bundle.[hash].js",
     // Куда это все необходимо складывать
     path: path.resolve(__dirname, 'dist')
   },
+  // Добавляем плагины
+  plugins: [
+    
+  ]
 };
