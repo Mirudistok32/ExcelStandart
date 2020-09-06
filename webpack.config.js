@@ -2,6 +2,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   //Указываем, где лежат исходники в нашем приложении.
@@ -18,6 +19,15 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   // Добавляем плагины
+  resolve: {
+    extensions: [".js"],
+    alias: {
+      // import '../../../../core/Component'
+      // import '@core/Componet
+      "@": path.resolve(__dirname, "src"),
+      "@core": path.resolve(__dirname, "src/core"),
+    },
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
@@ -31,5 +41,10 @@ module.exports = {
         to: path.resolve(__dirname, "dist"),
       },
     ]),
+    // Нужен для того, чтобы выносить весь css из js в отдельный файл
+    new MiniCssExtractPlugin({
+      // В какой файл все это нужно будет поместить
+      filename: "bundle.[hash].css",
+    }),
   ],
 };
