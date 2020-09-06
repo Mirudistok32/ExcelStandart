@@ -1,6 +1,7 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HTMLWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   //Указываем, где лежат исходники в нашем приложении.
@@ -14,15 +15,21 @@ module.exports = {
     //   Файл, в котором будут находиться все наши javascript-ы, и добавили хеш
     filename: "bundle.[hash].js",
     // Куда это все необходимо складывать
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, "dist"),
   },
   // Добавляем плагины
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       // Откуда будем брать шаблон для html, чтобы плагин его самостоятельно не генерировал
-      template: 'index.html',
-      
-    })
-  ]
+      template: "index.html",
+    }),
+    // Используем для того, чтобы переносить фавикон
+    new CopyPlugin([
+      {
+        from: path.resolve(__dirname, "src/favicon.ico"),
+        to: path.resolve(__dirname, "dist"),
+      },
+    ]),
+  ],
 };
