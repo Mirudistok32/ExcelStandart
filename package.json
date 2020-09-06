@@ -17,6 +17,7 @@
     "build": "webpack --mode production"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
