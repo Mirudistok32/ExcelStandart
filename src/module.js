@@ -1,1 +1,7 @@
-console.log("Module")
+console.log("Module");
+
+async function start() {
+  await Promise.resolve();
+}
+
+start();
