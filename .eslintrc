@@ -11,7 +11,8 @@
     "quotes": "off",
     "object-curly-spacing": "off",
     "spaced-comment": "off",
-    "max-len": "off"
+    "max-len": "off",
+    "require-jsdoc": "off"
   },
   "extends": ["eslint:recommended", "google"]
 }
