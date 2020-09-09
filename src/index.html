@@ -1,33 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="favicon.ico" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
     />
     <title>Excel Standart</title>
-  </head>
-  <body>
-    <div id="root" class="root">
-      <div class="excel">
+</head>
+<body>
+<div id="root" class="root">
+    <div class="excel">
         <div class="excel__header">
-          <input class="input" type="text" value="Новая таблица" />
-          <div>
-            <div class="button">
-              <span class="material-icons"> delete </span>
+            <input class="input" type="text" value="Новая таблица"/>
+            <div>
+                <div class="button">
+                    <span class="material-icons"> delete </span>
+                </div>
+                <div class="button">
+                    <span class="material-icons"> exit_to_app </span>
+                </div>
             </div>
-            <div class="button">
-              <span class="material-icons"> exit_to_app </span>
-            </div>
-          </div>
         </div>
-        <div class="excel__toolbar"></div>
+        <div class="excel__toolbar">
+            <div class="button">
+                <span class="material-icons"> format_align_left </span>
+            </div>
+            <div class="button">
+                <span class="material-icons"> format_align_center </span>
+            </div>
+            <div class="button">
+                <span class="material-icons"> format_align_right </span>
+            </div>
+            <div class="button">
+                <span class="material-icons"> format_bold </span>
+            </div>
+            <div class="button">
+                <span class="material-icons"> format_italic </span>
+            </div>
+            <div class="button">
+                <span class="material-icons"> format_underlined </span>
+            </div>
+        </div>
         <div class="excel__formula"></div>
         <div class="excel__table"></div>
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>
