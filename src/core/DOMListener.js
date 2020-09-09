@@ -1,3 +1,2 @@
-export class DOMListener {
-  
-}
+export class DOMListener {}
+
